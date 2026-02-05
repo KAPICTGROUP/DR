@@ -1,14 +1,47 @@
-<!-- Same nav/header -->
-<main class="quiz-main">
-    <div id="score">Score: <span id="quiz-score">0</span>/5</div>
-    <h2 id="quiz-question"></h2>
-    <div class="options">
-        <label><input type="radio" name="q" value="A"> <span id="optA"></span></label>
-        <!-- Similar for B,C,D -->
-    </div>
-    <button onclick="nextQuiz()">Next</button>
-    <div id="result" style="display:none;">Quiz Complete!</div>
-</main>
-<script>
-// Use droneQuiz array, loadQuizQuestion(), check answer logic from script.js template [page:0]
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Quiz - ICT Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVIGATION (same for all pages) -->
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="quiz.html">🧠 Quiz</a></li>
+            <li><a href="game.html">🎮 Game</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>🧠 Drone Technology Quiz</h1>
+        <p>Test your knowledge for ICT Exhibition!</p>
+    </header>
+
+    <main>
+        <div id="quiz-container" class="quiz-container">
+            <div id="score">Score: <span id="quiz-score">0</span>/5</div>
+            <h2 id="quiz-question" class="quiz-question">Loading...</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('a')" id="optA">A</div>
+                <div class="option" onclick="selectOption('b')" id="optB">B</div>
+                <div class="option" onclick="selectOption('c')" id="optC">C</div>
+                <div class="option" onclick="selectOption('d')" id="optD">D</div>
+            </div>
+            <div class="quiz-controls">
+                <button id="next-btn" class="btn" onclick="nextQuiz()">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>loadQuizQuestion();</script>
+</body>
+</html>

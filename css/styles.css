@@ -1,16 +1,215 @@
-body { font-family: Arial, sans-serif; margin: 0; background: linear-gradient(to bottom, #87CEEB, #E0F6FF); color: #333; }
-nav ul { list-style: none; background: #007bff; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; }
-nav li a { color: white; padding: 1rem; text-decoration: none; display: block; }
-nav li a:hover { background: #0056b3; }
-header { text-align: center; padding: 2rem; }
-.hero-img { max-width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
-main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-section { margin-bottom: 2rem; }
-img { max-width: 100%; height: auto; }
-ul { list-style-type: disc; padding-left: 2rem; }
-@media (max-width: 600px) { nav ul { flex-direction: column; } }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: #333; 
+    min-height: 100vh;
+}
+nav { 
+    background: rgba(0,123,255,0.95); 
+    backdrop-filter: blur(10px); 
+    padding: 1rem 0;
+    position: sticky; top: 0; z-index: 100;
+}
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin: 0; 
+}
+nav li a { 
+    color: white; 
+    padding: 1rem 1.5rem; 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+    font-weight: 500;
+}
+nav li a:hover, nav li a.active { 
+    background: rgba(255,255,255,0.2); 
+    border-radius: 25px; 
+    transform: translateY(-2px);
+}
+header { 
+    text-align: center; 
+    padding: 4rem 2rem; 
+    color: white; 
+    position: relative;
+}
+header h1 { 
+    font-size: 3rem; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+    margin-bottom: 1rem;
+}
+.hero-img { 
+    max-width: 100%; 
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+}
+main { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 2rem 1rem; 
+}
+section { 
+    background: rgba(255,255,255,0.95); 
+    padding: 2.5rem; 
+    border-radius: 20px; 
+    margin-bottom: 2rem; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h2 { 
+    color: #007bff; 
+    font-size: 2.2rem; 
+    margin-bottom: 1.5rem; 
+    text-align: center;
+}
+.content-img { 
+    width: 100%; 
+    max-width: 500px; 
+    border-radius: 15px; 
+    margin: 1rem auto; 
+    display: block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+ul { 
+    list-style: none; 
+    padding-left: 0;
+}
+ul li { 
+    background: linear-gradient(45deg, #007bff, #0056b3); 
+    color: white; 
+    margin: 1rem 0; 
+    padding: 1rem 1.5rem; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease;
+}
+ul li:hover { transform: translateX(10px); }
 
-.game-container { height: 100vh; overflow: hidden; position: relative; background: skyblue; }
-.drone { position: absolute; animation: fly 10s infinite linear; } /* Full CSS from helicopter/drone anim [page:1] */
-@keyframes fly { 0% { left: -20%; } 100% { left: 100%; } }
-.rotator { animation: rotate 0.6s linear infinite; } /* Blades spin [page:1][web:8] */
+/* QUIZ STYLES */
+.quiz-container { 
+    max-width: 700px; 
+    margin: 2rem auto; 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 20px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+.quiz-question { 
+    font-size: 1.4rem; 
+    margin-bottom: 2rem; 
+    text-align: center; 
+    color: #333;
+}
+.option { 
+    display: block; 
+    padding: 1rem 1.5rem; 
+    margin: 1rem 0; 
+    background: #f8f9fa; 
+    border: 2px solid #e9ecef; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+.option:hover { 
+    background: #007bff; 
+    color: white; 
+    border-color: #007bff; 
+    transform: scale(1.02);
+}
+.option.selected { 
+    background: #28a745; 
+    color: white; 
+    border-color: #28a745;
+}
+.quiz-controls { 
+    text-align: center; 
+    margin-top: 2rem;
+}
+.btn { 
+    background: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 1rem 2rem; 
+    border-radius: 25px; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    margin: 0 1rem;
+}
+.btn:hover { 
+    background: #0056b3; 
+    transform: translateY(-2px);
+}
+#quiz-score { 
+    font-size: 1.5rem; 
+    color: #28a745; 
+    font-weight: bold;
+}
+
+/* GAME STYLES */
+.game-container { 
+    height: 70vh; 
+    position: relative; 
+    background: linear-gradient(to bottom, #87CEEB 0%, #98D8E8 50%, #F0F8FF 100%); 
+    border-radius: 20px; 
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.drone { 
+    position: absolute; 
+    width: 120px; 
+    height: 80px; 
+    left: -150px; 
+    top: 50%; 
+    animation: flyPath 15s linear infinite;
+}
+.drone-body { 
+    width: 100%; 
+    height: 60px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+.rotor { 
+    position: absolute; 
+    width: 30px; 
+    height: 30px; 
+    background: #333;
+}
+.rotor-left { left: 5px; top: -10px; }
+.rotor-right { right: 5px; top: -10px; }
+.rotator { 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    background: #555; 
+    position: relative;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes flyPath { 
+    0% { left: -150px; top: 30%; }
+    25% { left: 20%; top: 20%; }
+    50% { left: 50%; top: 40%; }
+    75% { left: 75%; top: 25%; }
+    100% { left: 110%; top: 35%; }
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.cloud { 
+    position: absolute; 
+    background: white; 
+    border-radius: 50px; 
+    opacity: 0.8;
+}
+.cloud1 { width: 80px; height: 40px; top: 10%; animation: drift 25s infinite linear; }
+.cloud2 { width: 60px; height: 30px; top: 20%; animation: drift 30s infinite linear reverse; }
+@keyframes drift { 0% { left: -100px; } 100% { left: 110%; } }
+
+@media (max-width: 768px) {
+    nav ul { flex-direction: column; }
+    header h1 { font-size: 2rem; }
+    section { padding: 1.5rem; }
+}

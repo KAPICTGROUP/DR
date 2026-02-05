@@ -1,9 +1,37 @@
-<!-- Same nav/header -->
-<div id="animation" class="game-container">
-    <div class="drone">
-        <div class="rotor rotor-left"><div class="rotator"><div></div><div></div></div></div>
-        <div class="rotor rotor-right"><div class="rotator"><div></div><div></div></div></div>
-        <img src="drone5.jpg" alt="Drone" class="drone-body">
-    </div>
-    <!-- Clouds from CSS anim -->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Flight Sim - ICT Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav><!-- SAME NAV --></nav>
+    <header>
+        <h1>🚁 Drone Flight Simulator</h1>
+        <p>Press SPACEBAR to restart flight! Watch the rotors spin! ✨</p>
+    </header>
+    <main>
+        <section>
+            <div class="game-container">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="drone">
+                    <div class="rotor rotor-left">
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotor rotor-right">
+                        <div class="rotator"></div>
+                    </div>
+                    <img src="drone5.jpg" alt="Drone" class="drone-body">
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:1rem;">
+                💡 Real drone physics: Quadcopters use 4 rotors for stability!
+            </p>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
