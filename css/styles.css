@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; margin: 0; background: linear-gradient(to bottom, #87CEEB, #E0F6FF); color: #333; }
+nav ul { list-style: none; background: #007bff; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+nav li a { color: white; padding: 1rem; text-decoration: none; display: block; }
+nav li a:hover { background: #0056b3; }
+header { text-align: center; padding: 2rem; }
+.hero-img { max-width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
+main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+section { margin-bottom: 2rem; }
+img { max-width: 100%; height: auto; }
+ul { list-style-type: disc; padding-left: 2rem; }
+@media (max-width: 600px) { nav ul { flex-direction: column; } }
+
+.game-container { height: 100vh; overflow: hidden; position: relative; background: skyblue; }
+.drone { position: absolute; animation: fly 10s infinite linear; } /* Full CSS from helicopter/drone anim [page:1] */
+@keyframes fly { 0% { left: -20%; } 100% { left: 100%; } }
+.rotator { animation: rotate 0.6s linear infinite; } /* Blades spin [page:1][web:8] */
