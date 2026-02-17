@@ -5,7 +5,13 @@ const droneQuiz = [
     { q: "Famous drone brand?", a: "Samsung", b: "DJI", c: "Apple", d: "Sony", correct: "b" },
     { q: "Drones fly using?", a: "Wheels", b: "Propellers", c: "Jet engines", d: "Rockets", correct: "b" },
     { q: "Biggest drone challenge?", a: "Too expensive", b: "Short battery life", c: "Too slow", d: "Heavy weight", correct: "b" }
-];
+    { q: "Which early military technology is most directly considered a predecessor of modern unmanned aerial vehicles (UAVs)?", a: "Hot air balloons used for entertainment shows", b: "Manned biplanes used in World War I", c: "Weather balloons used for atmospheric measurements", d: "V-1 flying bombs used in World War II", correct: "d" }
+]; { q: "A conservation group in Nepal wants to monitor glacier melt in the Himalayas with minimal disturbance to wildlife. Which drone setup is most appropriate for this long-term environmental monitoring task?", a: "
+Long-endurance fixed-wing drones with environmental sensors and scheduled flights at set intervals", b: "
+Heavy-lift cargo drones regularly landing on glaciers to collect ice samples", c: "Small multirotor drones doing frequent low-altitude flights over the same paths all day", d: "
+High-speed racing drones flown manually by hobbyists to capture quick video clips", correct: "a" }
+
+", correct: "a" }
 
 let currentQuiz = 0, score = 0, selectedAnswer = '';
 
