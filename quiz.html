@@ -3,45 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drone Quiz - ICT Exhibition</title>
+    <title>Drone Quiz</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- NAVIGATION (same for all pages) -->
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="types.html">Types</a></li>
-            <li><a href="applications.html">Applications</a></li>
-            <li><a href="quiz.html">🧠 Quiz</a></li>
-            <li><a href="game.html">🎮 Game</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <h1>🧠 Drone Technology Quiz</h1>
-        <p>Test your knowledge for ICT Exhibition!</p>
-    </header>
-
-    <main>
-        <div id="quiz-container" class="quiz-container">
-            <div id="score">Score: <span id="quiz-score">0</span>/5</div>
-            <h2 id="quiz-question" class="quiz-question">Loading...</h2>
-            <div class="options">
-                <div class="option" onclick="selectOption('a')" id="optA">A</div>
-                <div class="option" onclick="selectOption('b')" id="optB">B</div>
-                <div class="option" onclick="selectOption('c')" id="optC">C</div>
-                <div class="option" onclick="selectOption('d')" id="optD">D</div>
+    <nav class="navbar"><ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="types.html">Types</a></li>
+    <li><a href="applications.html">Applications</a></li>
+    <li><a href="uses.html">Uses</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+    <main class="quiz-main">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1>Drone Quiz (10 Questions)</h1>
+                <div>Q <span id="qnum">1</span>/10 | Score: <span id="score">0</span> | Time: <span id="timer">60</span>s</div>
             </div>
-            <div class="quiz-controls">
-                <button id="next-btn" class="btn" onclick="nextQuiz()">Next</button>
-            </div>
+            <div id="question"></div>
+            <div id="options"></div>
+            <button id="next-btn" onclick="nextQuestion()" disabled>Next</button>
+            <div id="result"></div>
         </div>
     </main>
-
     <script src="js/script.js"></script>
-    <script>loadQuizQuestion();</script>
 </body>
 </html>

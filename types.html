@@ -3,54 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Types of Drones - ICT Exhibition</title>
+    <title>Drone Types - ICT Exhibit</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav><ul>
-            <li><a href="index.html">🏠 Home</a></li>
+    <nav class="navbar">
+        <div class="nav-brand">🚁 DroneTech</div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="types.html">Types</a></li>
             <li><a href="applications.html">Applications</a></li>
-            <li><a href="quiz.html">🧠 Quiz</a></li>
-            <li><a href="game.html">🎮 Game</a></li>
+            <li><a href="uses.html">Uses</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul></nav>
-
+        </ul>
+        <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+    </nav>
     <header>
-        <h1>📊 Drone Types</h1>
-        <p>Different designs for different jobs</p>
+        <h1>Drone Types</h1>
+        <p>Classification by design, size & purpose</p>
     </header>
-
     <main>
-        <section>
-            <img src="drone3.jpg" alt="Different drone types" class="content-img">
-            <h2>Quadcopter (Most Common)</h2>
-            <ul>
-                <li>4 rotors = Easy to control</li>
-                <li>Hover perfectly in air</li>
-                <li>Price: Rs 20,000 - 2 lakhs</li>
-                <li>Uses: Photography, racing</li>
-            </ul>
-
-            <h2>Fixed-Wing (Airplane Style)</h2>
-            <ul>
-                <li>Long flights (1+ hour)</li>
-                <li>Great for mapping fields</li>
-                <li>Needs runway to takeoff</li>
-                <li>Nepal farming favorite</li>
-            </ul>
-
-            <h2>Hybrid Drones</h2>
-            <ul>
-                <li>VTOL = Vertical TakeOff + Landing</li>
-                <li>Best of both worlds</li>
-                <li>Future of Nepal delivery</li>
-                <li>Most expensive type</li>
-            </ul>
+        <section class="types-grid">
+            <div class="type-card multi">
+                <h3>🏗️ Multi-Rotor (Quadcopter)</h3>
+                <div class="spec-list">
+                    <div><strong>Propellers:</strong> 4-8</div>
+                    <div><strong>Flight time:</strong> 15-30 min</div>
+                    <div><strong>Best for:</strong> Photography, beginners</div>
+                    <div><strong>Example:</strong> DJI Mavic series</div>
+                </div>
+            </div>
+            <div class="type-card fixed">
+                <h3>✈️ Fixed-Wing</h3>
+                <div class="spec-list">
+                    <div><strong>Wings:</strong> Airplane style</div>
+                    <div><strong>Flight time:</strong> 1-2 hours</div>
+                    <div><strong>Best for:</strong> Long range mapping</div>
+                    <div><strong>Example:</strong> SenseFly eBee</div>
+                </div>
+            </div>
+            <div class="type-card single">
+                <h3>🚁 Single Rotor</h3>
+                <div class="spec-list">
+                    <div><strong>Design:</strong> Helicopter style</div>
+                    <div><strong>Lift:</strong> Large single rotor</div>
+                    <div><strong>Best for:</strong> Heavy lift (25kg+)</div>
+                    <div><strong>Example:</strong> Industrial survey</div>
+                </div>
+            </div>
+            <div class="type-card hybrid">
+                <h3>🔄 Hybrid VTOL</h3>
+                <div class="spec-list">
+                    <div><strong>Features:</strong> Vertical + fixed-wing</div>
+                    <div><strong>Flight time:</strong> 2+ hours</div>
+                    <div><strong>Best for:</strong> Nepal mountains</div>
+                    <div><strong>Example:</strong> WingtraOne</div>
+                </div>
+            </div>
+            <div class="type-card nano">
+                <h3>🪰 Nano/Micro</h3>
+                <div class="spec-list">
+                    <div><strong>Weight:</strong> <250g</div>
+                    <div><strong>Size:</strong> Palm-sized</div>
+                    <div><strong>Best for:</strong> Indoor, no permit Nepal</div>
+                    <div><strong>Example:</strong> DJI Mini 2</div>
+                </div>
+            </div>
+            <div class="type-card racing">
+                <h3>🏁 FPV Racing</h3>
+                <div class="spec-list">
+                    <div><strong>Speed:</strong> 200km/h+</div>
+                    <div><strong>Camera:</strong> First Person View</div>
+                    <div><strong>Best for:</strong> Competitions</div>
+                    <div><strong>Example:</strong> Custom builds</div>
+                </div>
+            </div>
         </section>
+        <div class="type-comparison">
+            <h3>Quick Comparison</h3>
+            <table>
+                <thead>
+                    <tr><th>Type</th><th>Flight Time</th><th>Cost</th><th>Nepal Use</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Multi-Rotor</td><td>20 min</td><td>₹50k-2L</td><td>Photo/Survey</td></tr>
+                    <tr><td>Fixed-Wing</td><td>90 min</td><td>₹3-10L</td><td>Mapping</td></tr>
+                    <tr><td>Nano</td><td>30 min</td><td>₹25-50k</td><td>Hobby</td></tr>
+                    <tr><td>Racing</td><td>5 min</td><td>₹1-3L</td><td>Sports</td></tr>
+                </tbody>
+            </table>
+        </div>
     </main>
-
     <script src="js/script.js"></script>
 </body>
 </html>
